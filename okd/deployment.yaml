@@ -18,7 +18,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: quay.apps.staging.ocp/klg-tech/nginx
+      - image: nginx:latest
         name: nginx
         resources: {}
 status: {}
