@@ -22,3 +22,18 @@ spec:
         name: nginx
         resources: {}
 status: {}
+
+----
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
