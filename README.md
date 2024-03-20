@@ -85,4 +85,4 @@ status:
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
-![Image Alt text](/argodashboard.jpg "Optional title"))
+![Image Alt text](/argodashboard.jpg "Dashboard Argo")
