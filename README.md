@@ -1,13 +1,13 @@
 # Deploy Argocd In Cluster OKD
-```
+
 1. Install Argo CD
+```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
-===
+2. Sample Route To Apply
 
 ```
-2. Apply Route 
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
@@ -79,4 +79,8 @@ status:
       wildcardPolicy: None
       routerCanonicalHostname: router-default.apps.prod.okd
 
+```
+3. Show The Password Admin on Argo Dashboard
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
